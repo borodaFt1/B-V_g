@@ -38,8 +38,8 @@ public class Chars {
             class_chars[1] = sum;
             class_chars[2] = 10.0;
 
-            class_chars[3] = Character.calc_data("tank", "attack") * 0.9; // min_attack
-            class_chars[4] = Character.calc_data("tank", "attack") * 1.5; // max_attack
+            class_chars[3] = (Character.calc_data("tank", "attack") + Items.get_class_items("tank")[6])* 0.9; // min_attack
+            class_chars[4] = (Character.calc_data("tank", "attack") + Items.get_class_items("tank")[6])* 1.5; // max_attack
 
         } else if (Ch_class.equals("agility")){
 
@@ -53,8 +53,8 @@ public class Chars {
             class_chars[1] = sum;
             class_chars[2] = 20.0;
 
-            class_chars[3] = Character.calc_data("tank", "attack") * 0.8; // min_attack
-            class_chars[4] = Character.calc_data("tank", "attack") * 1.2; // max_attack
+            class_chars[3] = (Character.calc_data("agility", "attack") + Items.get_class_items("agility")[6]) * 0.8; // min_attack
+            class_chars[4] = (Character.calc_data("agility", "attack") + Items.get_class_items("agility")[6]) * 1.2; // max_attack
 
         }
     }
