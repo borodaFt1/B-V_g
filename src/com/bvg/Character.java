@@ -1,7 +1,7 @@
 package com.bvg;
 
 public class Character {
-//55555
+
 
         public static double calc_data(String ch_class, String need){
 

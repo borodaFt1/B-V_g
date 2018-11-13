@@ -23,9 +23,6 @@ public class Chars {
 
     static void Class_Chars(String Ch_class, double[] class_chars) {
 
-            double min_attack = 0;
-            double max_attack = 0;
-
 
         if(Ch_class.equals("tank")){
 
@@ -41,10 +38,8 @@ public class Chars {
             class_chars[1] = sum;
             class_chars[2] = 10.0;
 
-            min_attack = Character.calc_data("tank", "attack") * 0.8;
-            class_chars[3] = min_attack;
-            max_attack = Character.calc_data("tank", "attack") * 1.2;
-            class_chars[4] = max_attack;
+            class_chars[3] = Character.calc_data("tank", "attack") * 0.8; // min_attack
+            class_chars[4] = Character.calc_data("tank", "attack") * 1.2; // max_attack
 
         } else if (Ch_class.equals("agility")){
 
@@ -58,10 +53,8 @@ public class Chars {
             class_chars[1] = sum;
             class_chars[2] = 20.0;
 
-            min_attack = Character.calc_data("tank", "attack") * 0.8;
-            class_chars[3] = min_attack;
-            max_attack = Character.calc_data("tank", "attack") * 1.2;
-            class_chars[4] = max_attack;
+            class_chars[3] = Character.calc_data("tank", "attack") * 0.8; // min_attack
+            class_chars[4] = Character.calc_data("tank", "attack") * 1.2; // max_attack
 
         }
     }
