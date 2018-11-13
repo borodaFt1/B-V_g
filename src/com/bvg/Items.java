@@ -26,12 +26,12 @@ public class Items {
 
     static void class_Items(String ch_class, double[] class_chars) {
         if(ch_class.equals("tank")){
-            class_chars[0] = 3;
-            class_chars[1] = 2;
-            class_chars[2] = 4;
-            class_chars[3] = 2;
-            class_chars[4] = 5;
-            class_chars[5] = 8;
+            class_chars[0] = 4;
+            class_chars[1] = 3;
+            class_chars[2] = 5;
+            class_chars[3] = 3;
+            class_chars[4] = 6;
+            class_chars[5] = 10;
             class_chars[6] = 50;
 
         } else if (ch_class.equals("agility")){
