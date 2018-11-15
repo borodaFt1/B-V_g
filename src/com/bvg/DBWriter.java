@@ -1,45 +1,65 @@
 package com.bvg;
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
 import java.text.SimpleDateFormat;
 
 public class DBWriter {
 
 
-    public void DBWriter() {
+    public static void DBWriter() {
 
 
         try {
             Class.forName("org.postgresql.Driver");
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/Game_B-V", "postgres", "1151");
-            Statement connStatement = conn.createStatement();
+            Connection con = DriverManager.getConnection
+                    ("jdbc:postgresql://127.0.0.1:5432/Game_B-V", "postgres", "1151");
+            Statement connStatement = con.createStatement();
 
             String queryToPg;
-                    queryToPg = " some query";
 
-                connStatement.executeUpdate(queryToPg);
+            queryToPg = "SELECT * FROM players";
+
+                connStatement.executeQuery(queryToPg);
+                ResultSet requestResult = connStatement.executeQuery(queryToPg);
+
+                while (requestResult.next()){
+                    //System.out.println(requestResult.getString("id"));
+                    System.out.println(requestResult.getString("name"));
+                }
+
+
+
                 connStatement.close();
+
+            /*
+
+            queryToPg = "INSERT INTO players (name) VALUES ('testPlayer2')";
+
+            queryToPg = "INSERT IN TO termhandles (ip, tid, mti, func_code, date) " +
+                    "VALUES ('" +
+                    ip + "','" +
+                    tid + "','" +
+                    messMTI + "','" +
+                    func_code + "','" +
+                    date.format(new Date()) + "')";
+            System.out.println("query simple" + queryToPg);
+             */
+
+
+
 
 
             } catch (SQLException e) {
             e.printStackTrace();
             }
-
-
-
-
-
-
-
-
 
 
 
